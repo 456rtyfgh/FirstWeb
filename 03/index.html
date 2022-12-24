@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+</head>
+<body>
+    <h1><a href="/">나의 웹페이지 이름</a></h1>
+    <ol>
+        <!-- <li><a href="/read/1/">첫 게시글</a></li><li><a href="/read/2/">HTML</a></li><li><a href="/read/3/">CSS</a></li> -->
+        {% for doc in docs %} 
+        <li><a href="/read/{{doc['id']}}/">{{doc['title']}}</a></li>
+        {% endfor %}
+    </ol>
+    <ul><li><a href="/create/">글쓰기</a></li></ul>
+
+</body></html>

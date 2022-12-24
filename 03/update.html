@@ -1,0 +1,21 @@
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+</head>
+<body>
+    <h1><a href="/">나의 웹페이지 이름</a></h1>
+    <ol>
+        {% for doc in docs %} 
+        <li><a href="/read/{{doc['id']}}/">{{doc['title']}}</a></li>
+        {% endfor %}
+    </ol>
+    
+        <form action="/update/1/" method="POST">
+        <p><input type="text" name="title" value="{{title}}"></p>
+        <p><textarea name="content">{{content}}</textarea></p>
+        <p><input type="submit" value="수정"></p>
+    </form>
+
+</body></html>

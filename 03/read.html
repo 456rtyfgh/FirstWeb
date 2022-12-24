@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+</head>
+<body> 
+    <h1><a href="/">게시판</a></h1>
+    <ol>
+        {% for doc in docs %} 
+        <li><a href="/read/{{doc['id']}}/">{{doc['title']}}</a></li>
+        {% endfor %}
+    </ol>
+
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+    <ul>
+        <li><a href="/update/{{id}}/">수정</a></li>
+        <li><form action="/delete/{{id}}/" method="POST">
+            <input type="submit" value="삭제"></form>
+        </li>
+    </ul>
+</body></html>
